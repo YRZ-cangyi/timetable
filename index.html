@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f5f7">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="我的课表">
+<meta name="description" content="手机端课表工具：周课表、周次切换、PDF 导入、备注，数据只存在本机。">
+<title>我的课表</title>
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="topbar-main">
+        <button class="icon-btn" id="btn-settings" type="button" aria-label="设置" title="设置">⚙︎</button>
+        <div class="term-block">
+          <div class="term-title" id="term-title">我的课表</div>
+          <div class="term-sub" id="term-sub">加载中…</div>
+        </div>
+        <button class="icon-btn" id="btn-import" type="button" aria-label="导入 PDF 课表" title="导入 PDF 课表" style="width:auto;padding:0 12px;font-size:12.5px;font-weight:600">导入</button>
+      </div>
+      <div class="weekbar">
+        <button class="week-nav" id="btn-prev" type="button" aria-label="上一周">‹</button>
+        <div class="week-pill" id="week-pill">第 1 周</div>
+        <button class="week-nav" id="btn-next" type="button" aria-label="下一周">›</button>
+        <button class="week-today" id="btn-today" type="button">本周</button>
+      </div>
+    </header>
+
+    <main class="stage" id="stage">
+      <div class="cal" id="cal">
+        <div class="cal-body" id="cal-body">
+          <div class="cal-head" id="cal-head"></div>
+          <div class="empty-state" id="empty" hidden>
+            <h2>还没有课程</h2>
+            <p>可以导入教务系统导出的 PDF 课表<br>也可以手动一节课一节课地添加</p>
+            <div class="empty-actions">
+              <button class="btn btn-primary" type="button" data-act="pdf">导入 PDF</button>
+              <button class="btn" type="button" data-act="manual">手动添加</button>
+            </div>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <button class="fab" id="fab" type="button" aria-label="添加课程">+</button>
+
+  <div class="scrim" id="scrim"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="详情">
+    <div class="sheet-body" id="sheet-body"></div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <input type="file" id="pdf-input" accept="application/pdf,.pdf" hidden>
+  <input type="file" id="json-input" accept="application/json,.json" hidden>
+
+  <script src="assets/js/seed.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/pdf-parse.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
