@@ -12,7 +12,7 @@
   --danger: #e5484d;
   --shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 8px 24px rgba(16, 24, 40, 0.08);
   --period-h: 58px;
-  --gutter: 36px;
+  --gutter: 40px;
   --radius: 16px;
   color-scheme: light;
 }
@@ -66,7 +66,7 @@ button { background: none; border: 0; cursor: pointer; touch-action: manipulatio
 /* ---------- 顶栏 ---------- */
 .topbar {
   flex: none;
-  padding: calc(env(safe-area-inset-top) + 10px) 12px 8px;
+  padding: calc(env(safe-area-inset-top) + 6px) 10px 5px;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid var(--line);
@@ -76,23 +76,25 @@ button { background: none; border: 0; cursor: pointer; touch-action: manipulatio
 .topbar-main {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .term-block { flex: 1; min-width: 0; }
 
 .term-title {
-  font-size: 15px;
+  font-size: 13.5px;
   font-weight: 650;
   letter-spacing: -0.2px;
+  line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .term-sub {
-  margin-top: 2px;
-  font-size: 11.5px;
+  margin-top: 1px;
+  font-size: 10.5px;
+  line-height: 1.2;
   color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
@@ -100,16 +102,16 @@ button { background: none; border: 0; cursor: pointer; touch-action: manipulatio
 }
 
 .icon-btn {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   flex: none;
   display: grid;
   place-items: center;
-  border-radius: 11px;
+  border-radius: 10px;
   color: var(--text);
   background: var(--card);
   border: 1px solid var(--line);
-  font-size: 16px;
+  font-size: 15px;
   transition: transform 0.12s ease, background 0.12s ease;
 }
 
@@ -118,21 +120,21 @@ button { background: none; border: 0; cursor: pointer; touch-action: manipulatio
 .weekbar {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 6px;
+  margin-top: 6px;
 }
 
 .week-nav {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   flex: none;
   display: grid;
   place-items: center;
-  border-radius: 10px;
+  border-radius: 9px;
   border: 1px solid var(--line);
   background: var(--card);
   color: var(--muted);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1;
   transition: transform 0.12s ease;
 }
@@ -142,30 +144,30 @@ button { background: none; border: 0; cursor: pointer; touch-action: manipulatio
 
 .week-pill {
   flex: 1;
-  height: 32px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  border-radius: 10px;
+  gap: 6px;
+  border-radius: 9px;
   background: var(--accent-soft);
   color: var(--accent);
   font-weight: 650;
-  font-size: 13.5px;
+  font-size: 12.5px;
   letter-spacing: 0.2px;
 }
 
-.week-pill .week-range { font-weight: 500; font-size: 11.5px; opacity: 0.85; }
+.week-pill .week-range { font-weight: 500; font-size: 10.5px; opacity: 0.85; }
 
 .week-today {
-  height: 32px;
-  padding: 0 12px;
+  height: 28px;
+  padding: 0 10px;
   flex: none;
-  border-radius: 10px;
+  border-radius: 9px;
   border: 1px solid var(--line);
   background: var(--card);
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: 12px;
 }
 
 .week-today.is-active { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
@@ -188,19 +190,19 @@ button { background: none; border: 0; cursor: pointer; touch-action: manipulatio
   background: var(--bg);
   display: grid;
   grid-template-columns: var(--gutter) repeat(var(--cols, 7), minmax(0, 1fr));
-  padding-top: 6px;
+  padding-top: 4px;
   border-bottom: 1px solid var(--line);
 }
 
 .dh {
   text-align: center;
-  padding: 2px 0 7px;
-  font-size: 11.5px;
+  padding: 1px 0 4px;
+  font-size: 10.5px;
   color: var(--muted);
   line-height: 1.35;
 }
 
-.dh b { display: block; font-size: 12.5px; font-weight: 600; color: var(--text); }
+.dh b { display: block; font-size: 11.5px; font-weight: 600; color: var(--text); }
 .dh.is-today b { color: var(--accent); }
 .dh.is-today .dh-date {
   display: inline-block;
@@ -243,7 +245,7 @@ button { background: none; border: 0; cursor: pointer; touch-action: manipulatio
 }
 
 .g-cell b { font-size: 11.5px; font-weight: 600; color: var(--muted); }
-.g-cell span { font-variant-numeric: tabular-nums; }
+.g-cell span { font-size: 10px; color: var(--muted); font-variant-numeric: tabular-nums; letter-spacing: -0.1px; }
 
 .col {
   position: relative;
