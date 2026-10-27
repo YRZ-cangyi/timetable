@@ -689,10 +689,16 @@ button { background: none; border: 0; cursor: pointer; touch-action: manipulatio
 }
 
 @media (max-width: 400px) {
-  :root { --period-h: 54px; --gutter: 30px; }
+  :root { --period-h: 54px; --gutter: 36px; }
   .c-name { font-size: 10.5px; }
   .c-place { font-size: 9.5px; }
-  .g-cell span { display: none; }
+  .g-cell b { font-size: 11px; }
+  .g-cell span { font-size: 9px; letter-spacing: -0.1px; }
+}
+
+@media (max-width: 360px) {
+  :root { --gutter: 32px; }
+  .g-cell span { font-size: 8.5px; }
 }
 
 /* 手机上输入框字号小于 16px 会被 Chrome 自动放大页面，这里统一抬到 16px */
